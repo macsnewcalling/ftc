@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Microsoft Case ID Verification</title>
+  <title>Microsoft Case Verification</title>
   <style>
     body {
-      background: linear-gradient(to right, #0078D7, #00A4EF);
+      background-color: white;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
       justify-content: center;
@@ -15,12 +15,17 @@
     }
 
     .box {
-      background-color: #fff;
+      text-align: center;
       padding: 40px;
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      text-align: center;
-      width: 320px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 340px;
+      background-color: #ffffff;
+    }
+
+    .box img {
+      width: 120px;
+      margin-bottom: 20px;
     }
 
     .box h2 {
@@ -62,7 +67,8 @@
 <body>
 
   <div class="box">
-    <h2>Microsoft Case ID Verification</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo">
+    <h2>Case ID Verification</h2>
     <input type="text" id="caseInput" placeholder="Enter your Case ID">
     <button onclick="verify()">Verify</button>
     <div id="result"></div>
@@ -73,18 +79,15 @@
       const input = document.getElementById("caseInput").value.trim();
       const result = document.getElementById("result");
 
-      // Valid case ID for Jacob Miller
-      const validCaseId = "JACOB-MS-9999";
-
       if (input === "") {
         result.style.color = "orange";
         result.innerText = "⚠️ Please enter your Case ID.";
-      } else if (input === validCaseId) {
+      } else if (input === "889320") {
         result.style.color = "green";
-        result.innerText = "✅ Your case has been officially registered with Microsoft.";
+        result.innerHTML = "✅ This case has been officially registered with Microsoft.<br><br>👨‍💻 Assigned Technician: <b>Jacob Miller</b>";
       } else {
         result.style.color = "red";
-        result.innerText = "❌ Invalid Case ID. Please check again.";
+        result.innerText = "❌ Invalid Case ID. Please try again.";
       }
     }
   </script>
